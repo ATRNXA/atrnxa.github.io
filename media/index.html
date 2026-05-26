@@ -6,23 +6,79 @@
     <title>ATRNXA // Media</title>
     <meta name="description" content="Media updates and external assets for the ATRNXA configuration." />
     <link rel="stylesheet" href="../style.css" /> 
+    <style>
+        body {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .top-left-header {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            margin: 0;
+        }
+
+        .media-scroll-container {
+            max-height: 60vh;
+            overflow-y: auto;
+            width: 100%;
+            max-width: 540px;
+            padding-right: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: #ffffff #000000;
+        }
+
+        .media-card {
+            border: 1px solid #ffffff;
+            padding: 24px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .media-card:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 120px 24px 40px;
+            }
+            .top-left-header {
+                top: 40px;
+                left: 24px;
+            }
+            .media-scroll-container {
+                max-height: none;
+                overflow-y: visible;
+                padding-right: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
+    <h1 class="top-left-header fade-in two">Media</h1>
+
     <main class="container">
+        <div class="media-scroll-container fade-in three">
 
-        <section class="hero">
-            <p class="tag fade-in one">[ BROADCAST LOG ]</p>
+            <div class="media-card" style="border-style: dashed; opacity: 0.6;">
+                <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">
+                    [ BROADCAST LOG ]
+                </p>
+                <p style="font-size: 0.95rem; line-height: 1.6;">
+                    No active publications, technical logs, or external distribution streams are currently recorded under this terminal node.
+                </p>
+            </div>
 
-            <h1 class="fade-in two">
-                Media
-            </h1>
-
-            <p class="subtitle fade-in three" style="margin-top: 32px;">
-                No active publications, logs, or external links recorded.
-            </p>
-        </section>
-
+            </div>
     </main>
 
 </body>
