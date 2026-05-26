@@ -6,22 +6,84 @@
     <title>ATRNXA // Projects</title>
     <meta name="description" content="Active implementations and codebases built under the ATRNXA configuration." />
     <link rel="stylesheet" href="../style.css" /> 
+    <style>
+        /* Override body to allow absolute positioning for the header */
+        body {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Pin "Projects" to the top left */
+        .top-left-header {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            margin: 0;
+        }
+
+        /* Scrollable container for project cards centered on the screen */
+        .project-scroll-container {
+            max-height: 60vh;
+            overflow-y: auto;
+            width: 100%;
+            max-width: 540px;
+            padding-right: 10px;
+            /* Hide default scrollbars but keep functionality */
+            scrollbar-width: thin;
+            scrollbar-color: #ffffff #000000;
+        }
+
+        /* Individual project item configuration */
+        .project-card {
+            border: 1px solid #ffffff;
+            padding: 24px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .project-card:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive adjustments for mobile screens */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 120px 24px 40px;
+            }
+            .top-left-header {
+                top: 40px;
+                left: 24px;
+            }
+            .project-scroll-container {
+                max-height: none;
+                overflow-y: visible;
+                padding-right: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
+    <h1 class="top-left-header fade-in two">Projects</h1>
+
     <main class="container">
+        <div class="project-scroll-container fade-in three">
 
-        <section class="hero">
+            <div class="project-card">
+                <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">
+                    1) <a href="https://github.com/ATRNXA/MARJARA" target="_blank" style="color: #ffffff; text-decoration: underline;">MARJARA</a>
+                </p>
+                <p style="font-size: 0.95rem; line-height: 1.6;">
+                    Custom LLM training stack engineered from first principles. Implements Grouped-Query Attention (GQA), Rotary Position Embeddings (RoPE), Mixture of Experts (MoE), and deep KV-caching, etc.
+                </p>
+            </div>
 
-            <h1 class="fade-in two">
-                Projects
-            </h1>
-
-            <p class="subtitle fade-in three" style="margin-top: 32px;">
-                1) <a href="https://github.com/ATRNXA/MARJARA" target="_blank" style="color: #ffffff; text-decoration: underline; font-weight: bold;">MARJARA</a>
-            </p>
-        </section>
-
+            </div>
     </main>
 
 </body>
