@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATRNXA // Advisories</title>
+    <meta name="description" content="Security advisories and vulnerability tracking for the ATRNXA configuration." />
+    <link rel="stylesheet" href="../style.css" /> 
+    <style>
+        /* Override body to allow absolute positioning for the header */
+        body {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Pin "Advisories" to the top left */
+        .top-left-header {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            margin: 0;
+        }
+
+        /* Scrollable container for advisory cards centered on screen */
+        .advisory-scroll-container {
+            max-height: 60vh;
+            overflow-y: auto;
+            width: 100%;
+            max-width: 540px;
+            padding-right: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: #ffffff #000000;
+        }
+
+        /* Individual advisory card configuration */
+        .advisory-card {
+            border: 1px solid #ffffff;
+            padding: 24px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .advisory-card:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive layout for mobile viewports */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 120px 24px 40px;
+            }
+            .top-left-header {
+                top: 40px;
+                left: 24px;
+            }
+            .advisory-scroll-container {
+                max-height: none;
+                overflow-y: visible;
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header pinned to top left -->
+    <h1 class="top-left-header fade-in two">Advisories</h1>
+
+    <!-- Centered Scrollable Stack Container -->
+    <main class="container">
+        <div class="advisory-scroll-container fade-in three">
+
+            <!-- Active Status Card -->
+            <div class="advisory-card" style="border-style: dashed; opacity: 0.6;">
+                <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">
+                    [ SECURITY LOG ]
+                </p>
+                <p style="font-size: 0.95rem; line-height: 1.6;">
+                    No security advisories, vulnerability tracking logs, or system threat alerts have been registered under this node.
+                </p>
+            </div>
+
+            <!-- Future items can be added below as solid-bordered .advisory-card blocks -->
+
+        </div>
+    </main>
+
+</body>
+</html>
