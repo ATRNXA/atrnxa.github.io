@@ -11,9 +11,11 @@ html {
 body {
     background: #000000;
     color: #ffffff;
-    font-family: monospace; /* Keeps the raw engineering aesthetic */
-    padding: 140px 24px 100px;
+    font-family: monospace;
+    padding: 0 24px;
+    min-height: 100vh;
     display: flex;
+    align-items: center;
     justify-content: center;
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
@@ -21,20 +23,22 @@ body {
 
 .container {
     width: 100%;
-    max-width: 760px;
+    max-width: 680px;
+    text-align: center;
+    padding: 60px 0;
 }
 
 /* Staggered Fade-In System */
 .fade-in {
     opacity: 0;
-    transform: translateY(12px);
-    animation: premiumFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateY(8px);
+    animation: premiumFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.fade-in.one   { animation-delay: 0.15s; }
-.fade-in.two   { animation-delay: 0.30s; }
-.fade-in.three { animation-delay: 0.45s; }
-.fade-in.four  { animation-delay: 0.60s; }
+.fade-in.one   { animation-delay: 0.1s; }
+.fade-in.two   { animation-delay: 0.2s; }
+.fade-in.three { animation-delay: 0.3s; }
+.fade-in.four  { animation-delay: 0.45s; }
 
 @keyframes premiumFade {
     to {
@@ -43,165 +47,68 @@ body {
     }
 }
 
-/* Hero Content Styling */
-.hero {
-    margin-bottom: 60px;
-}
-
+/* Typography Styling */
 .tag {
-    color: #555555;
-    font-size: 0.95rem;
-    letter-spacing: 2px;
-    margin-bottom: 16px;
-}
-
-h1 {
-    font-size: 1.6rem;
-    font-weight: normal;
-    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: bold;
     margin-bottom: 24px;
 }
 
+h1 {
+    font-size: 1.45rem;
+    font-weight: normal;
+    margin-bottom: 28px;
+}
+
 h1 span {
-    color: #777777;
     display: block;
-    font-size: 1.2rem;
-    margin-top: 6px;
+    font-weight: bold;
+    margin-top: 4px;
 }
 
 .subtitle {
-    color: #aaaaaa;
-    font-size: 1.1rem;
-    max-width: 680px;
-}
-
-/* Interactive Navigation Links */
-.links {
-    display: flex;
-    gap: 24px;
-    margin-top: 36px;
-}
-
-.links a {
-    color: #ffffff;
-    text-decoration: none;
-    border: 1px solid #222222;
-    padding: 8px 16px;
-    font-size: 0.95rem;
-    transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.links a:hover {
-    background: #111111;
-    border-color: #555555;
-}
-
-/* Section Separator */
-.divider {
-    border: 0;
-    border-top: 1px solid #161616;
-    margin: 60px 0;
-}
-
-/* Technical Panels */
-.panel {
-    margin-bottom: 54px;
-}
-
-h2 {
     font-size: 1.05rem;
-    font-weight: normal;
-    color: #ffffff;
-    margin-bottom: 18px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    text-align: justify;
+    text-align-last: center; /* Maintains centered layout balance */
 }
 
-p {
-    font-size: 1.05rem;
-    color: #aaaaaa;
-    margin-bottom: 20px;
-}
-
-p:last-of-type {
-    margin-bottom: 0;
-}
-
-/* Domain Token Stack */
-.stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 16px;
-}
-
-.stack span {
-    border: 1px solid #1c1c1c;
-    padding: 6px 12px;
-    font-size: 0.9rem;
-    color: #888888;
-    background: #050505;
-}
-
-/* Custom styling for your listed repositories */
-.repo-list {
-    list-style-type: none;
-    margin-top: 12px;
-}
-
-.repo-list li {
-    font-size: 1.05rem;
-    color: #888888;
-    margin-bottom: 12px;
-}
-
-.repo-list li a {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-/* Bottom Nav System */
+/* Bottom Navigation */
 footer {
-    margin-top: 100px; /* Deep breathing room at the bottom */
-    border-top: 1px solid #161616;
+    margin-top: 70px;
     padding-top: 32px;
 }
 
 .footer-nav {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .footer-nav a {
-    color: #aaaaaa;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 .footer-nav a:hover {
-    color: #ffffff;
+    font-weight: bold;
     text-decoration: underline;
 }
 
 .config-log {
-    color: #444444;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    font-weight: bold;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 640px) {
     body {
-        padding: 60px 20px 40px;
+        align-items: flex-start;
+        padding: 80px 24px;
     }
-    .divider {
-        margin: 40px 0;
-    }
-    .links {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .links a {
+    .subtitle {
         text-align: center;
     }
     .footer-nav {
